@@ -1,0 +1,45 @@
+h1 {
+    color: red;
+}
+
+.same {
+    background-color: orange;
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    align-items: center;
+
+    /* flex-wrap: wrap; */
+    gap: 20px;
+
+    /* flex-direction: column-reverse; */
+
+    background-color: beige;
+    height: 600px;
+}
+
+#three {
+    align-self: flex-start;
+}
+
+#special {
+    /* flex-grow: 5; */
+    /* flex-shrink: 0; */
+    justify-self: flex-end;
+    /* align-self: flex-end; */
+}
+
+#specialOne {
+    /* flex-grow: 10; */
+}

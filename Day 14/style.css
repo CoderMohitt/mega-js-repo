@@ -1,0 +1,22 @@
+
+h1 {
+    color: blue;
+}
+
+#main {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.same {
+    height: 100px;
+    background-color: blue;
+    width: 600px;
+}
+
+@media(min-width: 768px) {
+    #main {
+        flex-direction: row;
+    }
+}
