@@ -1,0 +1,22 @@
+#one {
+    height: 100px;
+    width: 200px;
+}
+
+#two {
+    height: 200px;
+    width: 100px;
+}
+
+#three {
+    height: 250px;
+    width: 150px;
+}
+
+.black {
+    background-color: black;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
