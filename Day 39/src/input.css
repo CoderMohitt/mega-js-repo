@@ -1,1 +1,11 @@
-@import "tailwindcss"
+@import "tailwindcss";
+
+@theme {
+    --color-brand: #1da1f2;
+}
+
+@layer components {
+    .btn {
+        @apply bg-brand text-6xl
+    } 
+}

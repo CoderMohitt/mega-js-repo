@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+    --color-brand: #86158c;
+    --color-brand-new: #6e3b20;
+    --breakpoint-custom: 500px;
+    --font-myfont: "Bitcount Ink", system-ui;
+}
+
+@layer components{
+    .btn {
+        @apply bg-blue-500 p-4 rounded-md text-brand
+    }
+}
