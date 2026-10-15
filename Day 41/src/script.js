@@ -20,11 +20,12 @@ async function getData(query) {
 
 function createCard(movie) {
     const card = document.createElement("div")
-    card.className = "bg-red-500"
+    // card.className = "bg-red-500"
     card.textContent = movie.Title
     const poster = document.createElement("img")
     poster.src = movie.Poster
     card.appendChild(poster)
+    // card.classList.add("poster")
 
     main.appendChild(card)
 }
@@ -38,7 +39,7 @@ const b = 20
 const music = document.getElementById("music")
 
 async function  getMusic() {
-    const res = await fetch("https://api.freetouse.com/v3/music/tracks/all")
+    const res = await fetch("https://corsproxy.io/?" + encodeURIComponent("https://api.freetouse.com/v3/music/tracks/all"))
     const data = await res.json()
 
     console.log(data)
