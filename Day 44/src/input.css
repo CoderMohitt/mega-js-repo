@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --animate-fade-in: fade-in 1s ease-out;
+  --animate-car: car 5s ease-in-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(52px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+@keyframes car {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(500px, 0);
+  }
+  50% {
+    transform: translate(500px, 500px);
+  }
+  75% {
+    transform: translate(0, 500px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+}
