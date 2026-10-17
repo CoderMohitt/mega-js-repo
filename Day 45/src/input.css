@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@plugin "daisyui";
+
+@utility text-glow {
+  text-shadow: 0 0 12px currentColor;
+}
