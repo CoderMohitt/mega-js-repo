@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 function Card({ name, role, age, isStudent, subs }) {
   console.log(subs);
   return (
@@ -57,12 +59,23 @@ function Demo1({fn}) {
 
 
 function App() {
+  const [count, setCount] = useState(0)
+
+  function inc() {
+    setCount(count => count + 1)
+    setCount(count => count + 1)
+    // setCount(count + 1)
+    // setCount(count + 1)
+    console.log(count)
+  }
   function random() {
     console.log("click")
   }
   return (
     <>
-    <Demo1 fn={random} />
+    <button onClick={inc}>click</button>
+    <p>{count}</p>
+    {/* <Demo1 fn={random} /> */}
       {/* <UserCard name={"Mohit"} role={"Web Dev"} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5TGfozDvDJg6shlLGnB4vVStEtsdgjqsSLWcH0q8xySETLF50Pp5385tq&s=10"} />
       <UserCard name={"Saurabh"} role={"Data analyst"} src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5TGfozDvDJg6shlLGnB4vVStEtsdgjqsSLWcH0q8xySETLF50Pp5385tq&s=10"} /> */}
       {/* <Card name="Mohit" role="Developer" age="23" isStudent subs={["phy", "che"]} obj={{city: "delhi"}} />
