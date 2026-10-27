@@ -18,10 +18,28 @@ function App() {
     // setCount(count + 1) // 3
     console.log(count)
   }
+
+  function SignupForm() {
+  const [form, setForm] = useState({ name: "", email: "" });
+
+  function handleChange(e) {
+    console.log(e.target.name)
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  return (
+    <form>
+      <input name="nameee" value={form.name} onChange={handleChange} />
+      <input name="email" value={form.email} onChange={handleChange} />
+    </form>
+  );
+}
   return (
     <>
-      <button onClick={inc}>increase</button>
-      <h1>Count: {count}</h1>
+    <SignupForm />
+    <h1 className="bg-red-200">hi</h1>
+      {/* <button onClick={inc}>increase</button>
+      <h1>Count: {count}</h1> */}
 
       {/* <button onClick={toggle}>{isOn ? "Hide" : "Show"}</button>
 
