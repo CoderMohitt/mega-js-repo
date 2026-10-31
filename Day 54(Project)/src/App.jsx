@@ -6,9 +6,7 @@ import items from "./data/data";
 function App() {
   const [fItems, setFitems] = useState(items);
   const [cart, setCart] = useState([]);
-
-  console.log("main status")
-  console.log(cart)
+  const [totalPrice, setTotalPrice] = useState(0);
 
   function findItems(category) {
     if (category === "all") {
@@ -17,6 +15,14 @@ function App() {
     }
 
     setFitems(items.filter((item) => item.category === category));
+  }
+
+  function searchItems(query) {
+    setFitems(
+      items.filter((item) =>
+        item.title.toLowerCase().includes(query.toLowerCase()),
+      ),
+    );
   }
 
   return (
@@ -44,6 +50,15 @@ function App() {
         </div>
       </div>
 
+      <div>
+        <input
+          type="text"
+          className="border py-1 px-3 ml-10 mt-10 rounded-xl"
+          placeholder="laptop..."
+          onChange={(e) => searchItems(e.target.value)}
+        />
+      </div>
+
       <div className="flex flex-wrap justify-around mt-10">
         {fItems.map((item) => (
           <Card
@@ -55,6 +70,9 @@ function App() {
             category={item.category}
             cart={cart}
             setCart={setCart}
+            totalPrice={totalPrice} 
+            setTotalPrice={setTotalPrice}
+            qty={cart.qty || 0}
           />
         ))}
       </div>
@@ -62,19 +80,26 @@ function App() {
       <h1 className="mt-10 font-bold text-lg">Cart items</h1>
 
       {cart.length > 0 && (
-        <div className="flex justify-around flex-wrap">
-          {cart.map((item) => (
-            <Card
-              id={item.id}
-              title={item.title}
-              price={item.price}
-              url={item.url}
-              stock={item.stock}
-              category={item.category}
-              cart={cart}
-              setCart={setCart}
-            />
-          ))}
+        <div>
+          <div className="flex justify-around flex-wrap">
+            {cart.map((item) => (
+              <Card
+                id={item.id}
+                title={item.title}
+                price={item.price}
+                url={item.url}
+                stock={item.stock}
+                category={item.category}
+                cart={cart}
+                setCart={setCart}
+                isCart
+                qty={cart.qty || 0}
+              />
+            ))}
+          </div>
+          <div>
+            <p>Total Price: {totalPrice}</p>
+          </div>
         </div>
       )}
     </>
