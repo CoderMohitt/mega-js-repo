@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import New from "./New";
 
 function App() {
   // const inputRef = useRef(null);
@@ -22,7 +23,8 @@ function App() {
       {/* <Demo /> */}
       {/* <Value />
        */}
-       <Stale />
+       {/* <Stale /> */}
+       <New />
     </>
   );
 }
