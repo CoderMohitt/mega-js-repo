@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router'
+import { useCart } from '../context/CartContext'
 
-function Navbar({cartItems}) {
+function Navbar() {
+  const {totalItems} = useCart()
+
   return (
     <div className='p-3'>
       <Link to={"/cart"}>Cart</Link>
-        <p>cart {cartItems || 0}</p>
+        <p>cart {totalItems().total || 0}</p>
     </div>
   )
 }

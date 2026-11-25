@@ -1,6 +1,9 @@
 import React from "react";
+import { useCart } from "../context/CartContext";
 
-function ProductCard({ id, name, price, image, addToCart }) {
+function ProductCard({ id, name, price, image }) {
+  const {addToCart} = useCart()
+
   return (
     <div className="border w-fit p-2">
       <img src={image} alt="" width={350} />
